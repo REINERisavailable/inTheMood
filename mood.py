@@ -2,7 +2,7 @@
 import streamlit as st
 
 def main():
-    st.title('Hello, Streamlit!')
+    st.title('Hello!')
     st.write('This is a simple Streamlit app for deployment.')
 
 if __name__ == "__main__":

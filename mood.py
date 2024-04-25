@@ -1,27 +1,23 @@
+# Python
 import streamlit as st
 
-def page1():
-    st.header("Page 1")
-    st.write("You are on page 1")
-
-def page2():
-    st.header("Page 2")
-    st.write("You are on page 2")
-
-def page3():
-    st.header("Page 3")
-    st.write("You are on page 2")
-
 def main():
-    st.sidebar.title('Navigation')
-    selection = st.sidebar.radio("Go to", ["Page 1", "Page 2"])
+    st.title('Mood Based Recommendation System')
 
-    if selection == "Page 1":
-        page1()
-    elif selection == "Page 2":
-        page2()
-    elif selection == "Page 2":
-        page3()
+    if st.button("Start"):
+        activity = st.selectbox("What are you in the mood for?", ("Watching a movie", "Reading a book", "Reading a manga", "Watching anime", "Watching YouTube"))
+        if st.button("Next"):
+            mood = st.selectbox("What's your current mood?", ("Happy", "Sad", "Excited", "Bored", "Angry"))
+            if st.button("Recommend me"):
+                st.write(f"Here are some {activity.lower()} recommendations for when you're feeling {mood.lower()}:")
+
+                # Here you can add code to display recommendations based on the selected activity and mood
+                # For example:
+                if activity == "Watching a movie" and mood == "Happy":
+                    st.write("Movie 1, Movie 2, Movie 3")
+                elif activity == "Reading a book" and mood == "Sad":
+                    st.write("Book 1, Book 2, Book 3")
+                # Add more conditions to handle other combinations of activity and mood
 
 if __name__ == "__main__":
     main()

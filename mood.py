@@ -4,11 +4,14 @@ import streamlit as st
 def main():
     st.title('Mood Based Recommendation System')
 
-    if st.button("Start"):
+    start = st.button("Start")
+    if start:
         activity = st.selectbox("What are you in the mood for?", ("Watching a movie", "Reading a book", "Reading a manga", "Watching anime", "Watching YouTube"))
-        if st.button("Next"):
+        next = st.button("Next")
+        if next:
             mood = st.selectbox("What's your current mood?", ("Happy", "Sad", "Excited", "Bored", "Angry"))
-            if st.button("Recommend me"):
+            recommend = st.button("Recommend me")
+            if recommend:
                 st.write(f"Here are some {activity.lower()} recommendations for when you're feeling {mood.lower()}:")
 
                 # Here you can add code to display recommendations based on the selected activity and mood
